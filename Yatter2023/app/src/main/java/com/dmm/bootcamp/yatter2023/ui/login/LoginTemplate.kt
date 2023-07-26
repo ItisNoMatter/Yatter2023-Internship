@@ -59,8 +59,8 @@ fun LoginTemplate(
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(bottom = 16.dp),
-                    value = password,
-                    onValueChange = onChangedPassword,
+                    value = userName,
+                    onValueChange = onChangedUserName,
                     placeholder = {
                         Text(text = "username")
                     }

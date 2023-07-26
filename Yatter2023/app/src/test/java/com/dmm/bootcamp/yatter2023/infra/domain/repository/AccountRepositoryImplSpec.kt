@@ -1,6 +1,6 @@
 package com.dmm.bootcamp.yatter2023.infra.domain.repository
 
-import com.dmm.bootcamp.yatter2023.domain.model.Username
+import com.dmm.bootcamp.yatter2023.di.domain.model.Username
 import com.dmm.bootcamp.yatter2023.infra.api.YatterApi
 import com.dmm.bootcamp.yatter2023.infra.api.json.AccountJson
 import com.dmm.bootcamp.yatter2023.infra.domain.converter.AccountConverter

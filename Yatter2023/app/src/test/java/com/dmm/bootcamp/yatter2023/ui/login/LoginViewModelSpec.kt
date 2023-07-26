@@ -2,8 +2,8 @@ package com.dmm.bootcamp.yatter2023.ui.login
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.dmm.bootcamp.yatter2023.common.MainDispatcherRule
-import com.dmm.bootcamp.yatter2023.domain.model.Password
-import com.dmm.bootcamp.yatter2023.domain.model.Username
+import com.dmm.bootcamp.yatter2023.di.domain.model.Password
+import com.dmm.bootcamp.yatter2023.di.domain.model.Username
 import com.dmm.bootcamp.yatter2023.usecase.login.LoginUseCase
 import com.dmm.bootcamp.yatter2023.usecase.login.LoginUseCaseResult
 import com.google.common.truth.Truth.assertThat

@@ -1,16 +1,16 @@
-package com.dmm.bootcamp.yatter2023.domain.model
+package com.dmm.bootcamp.yatter2023.di.domain.model
 
 import java.net.URL
 
 abstract class Me(
-  id: AccountId,
-  username: Username,
-  displayName: String?,
-  note: String?,
-  avatar: URL?,
-  header: URL?,
-  followingCount: Int,
-  followerCount: Int,
+    id: AccountId,
+    username: Username,
+    displayName: String?,
+    note: String?,
+    avatar: URL?,
+    header: URL?,
+    followingCount: Int,
+    followerCount: Int,
 ) : Account(
   id,
   username,

@@ -1,9 +1,9 @@
 package com.dmm.bootcamp.yatter2023.auth
 
 import android.accounts.AuthenticatorException
-import com.dmm.bootcamp.yatter2023.domain.model.AccountId
-import com.dmm.bootcamp.yatter2023.domain.model.Username
-import com.dmm.bootcamp.yatter2023.domain.service.GetMeService
+import com.dmm.bootcamp.yatter2023.di.domain.model.AccountId
+import com.dmm.bootcamp.yatter2023.di.domain.model.Username
+import com.dmm.bootcamp.yatter2023.di.domain.service.GetMeService
 import com.dmm.bootcamp.yatter2023.infra.domain.model.MeImpl
 import com.google.common.truth.Truth.assertThat
 import io.mockk.coEvery

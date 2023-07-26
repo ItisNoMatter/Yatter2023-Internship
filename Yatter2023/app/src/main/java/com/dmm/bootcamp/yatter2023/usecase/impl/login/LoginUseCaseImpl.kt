@@ -1,17 +1,17 @@
 package com.dmm.bootcamp.yatter2023.usecase.impl.login
 
-import com.dmm.bootcamp.yatter2023.domain.model.Password
-import com.dmm.bootcamp.yatter2023.domain.model.Username
-import com.dmm.bootcamp.yatter2023.domain.service.LoginService
+import com.dmm.bootcamp.yatter2023.di.domain.model.Password
+import com.dmm.bootcamp.yatter2023.di.domain.model.Username
+import com.dmm.bootcamp.yatter2023.di.domain.service.LoginService
 import com.dmm.bootcamp.yatter2023.usecase.login.LoginUseCase
 import com.dmm.bootcamp.yatter2023.usecase.login.LoginUseCaseResult
 
 internal class LoginUseCaseImpl(
-  private val loginService: LoginService,
+    private val loginService: LoginService,
 ) : LoginUseCase {
   override suspend fun execute(
-    username: Username,
-    password: Password
+      username: Username,
+      password: Password
   ): LoginUseCaseResult {
     try {
       if (username.value.isBlank()) return LoginUseCaseResult.Failure.EmptyUsername

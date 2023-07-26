@@ -1,7 +1,7 @@
 package com.dmm.bootcamp.yatter2023.infra.domain.service
 
-import com.dmm.bootcamp.yatter2023.domain.model.Password
-import com.dmm.bootcamp.yatter2023.domain.model.Username
+import com.dmm.bootcamp.yatter2023.di.domain.model.Password
+import com.dmm.bootcamp.yatter2023.di.domain.model.Username
 import com.dmm.bootcamp.yatter2023.infra.pref.MePreferences
 import io.mockk.coVerify
 import io.mockk.justRun

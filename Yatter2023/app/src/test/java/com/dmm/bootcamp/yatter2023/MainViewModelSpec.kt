@@ -2,7 +2,7 @@ package com.dmm.bootcamp.yatter2023
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.dmm.bootcamp.yatter2023.common.MainDispatcherRule
-import com.dmm.bootcamp.yatter2023.domain.service.CheckLoginService
+import com.dmm.bootcamp.yatter2023.di.domain.service.CheckLoginService
 import com.google.common.truth.Truth.assertThat
 import io.mockk.coEvery
 import io.mockk.mockk

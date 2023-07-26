@@ -1,5 +1,6 @@
 package com.dmm.bootcamp.yatter2023.domain.model
 
+import com.dmm.bootcamp.yatter2023.di.domain.model.Password
 import com.google.common.truth.Truth.assertThat
 import kotlinx.coroutines.test.runTest
 import org.junit.Test

@@ -2,7 +2,7 @@ package com.dmm.bootcamp.yatter2023.ui.timeline
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.dmm.bootcamp.yatter2023.domain.repository.StatusRepository
+import com.dmm.bootcamp.yatter2023.di.domain.repository.StatusRepository
 import com.dmm.bootcamp.yatter2023.ui.timeline.bindingmodel.converter.StatusConverter
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

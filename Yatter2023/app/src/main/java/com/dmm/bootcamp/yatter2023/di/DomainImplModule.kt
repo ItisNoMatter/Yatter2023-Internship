@@ -1,10 +1,10 @@
 package com.dmm.bootcamp.yatter2023.di
 
-import com.dmm.bootcamp.yatter2023.domain.repository.AccountRepository
-import com.dmm.bootcamp.yatter2023.domain.repository.StatusRepository
-import com.dmm.bootcamp.yatter2023.domain.service.CheckLoginService
-import com.dmm.bootcamp.yatter2023.domain.service.GetMeService
-import com.dmm.bootcamp.yatter2023.domain.service.LoginService
+import com.dmm.bootcamp.yatter2023.di.domain.repository.AccountRepository
+import com.dmm.bootcamp.yatter2023.di.domain.repository.StatusRepository
+import com.dmm.bootcamp.yatter2023.di.domain.service.CheckLoginService
+import com.dmm.bootcamp.yatter2023.di.domain.service.GetMeService
+import com.dmm.bootcamp.yatter2023.di.domain.service.LoginService
 import com.dmm.bootcamp.yatter2023.infra.domain.repository.AccountRepositoryImpl
 import com.dmm.bootcamp.yatter2023.infra.domain.repository.StatusRepositoryImpl
 import com.dmm.bootcamp.yatter2023.infra.domain.service.CheckLoginServiceImpl

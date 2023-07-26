@@ -1,6 +1,6 @@
 package com.dmm.bootcamp.yatter2023.infra.domain.service
 
-import com.dmm.bootcamp.yatter2023.domain.service.CheckLoginService
+import com.dmm.bootcamp.yatter2023.di.domain.service.CheckLoginService
 import com.dmm.bootcamp.yatter2023.infra.pref.MePreferences
 
 class CheckLoginServiceImpl(

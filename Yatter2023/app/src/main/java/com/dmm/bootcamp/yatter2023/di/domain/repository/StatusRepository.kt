@@ -1,8 +1,8 @@
-package com.dmm.bootcamp.yatter2023.domain.repository
+package com.dmm.bootcamp.yatter2023.di.domain.repository
 
-import com.dmm.bootcamp.yatter2023.domain.model.Me
-import com.dmm.bootcamp.yatter2023.domain.model.Status
-import com.dmm.bootcamp.yatter2023.domain.model.StatusId
+import com.dmm.bootcamp.yatter2023.di.domain.model.Me
+import com.dmm.bootcamp.yatter2023.di.domain.model.Status
+import com.dmm.bootcamp.yatter2023.di.domain.model.StatusId
 import java.io.File
 
 interface StatusRepository {

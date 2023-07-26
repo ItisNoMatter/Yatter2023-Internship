@@ -1,7 +1,7 @@
 package com.dmm.bootcamp.yatter2023.infra.domain.converter
 
-import com.dmm.bootcamp.yatter2023.domain.model.Status
-import com.dmm.bootcamp.yatter2023.domain.model.StatusId
+import com.dmm.bootcamp.yatter2023.di.domain.model.Status
+import com.dmm.bootcamp.yatter2023.di.domain.model.StatusId
 import com.dmm.bootcamp.yatter2023.infra.api.json.StatusJson
 
 object StatusConverter {

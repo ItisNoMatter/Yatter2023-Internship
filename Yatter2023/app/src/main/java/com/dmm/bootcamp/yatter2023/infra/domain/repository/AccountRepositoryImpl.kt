@@ -1,10 +1,10 @@
 package com.dmm.bootcamp.yatter2023.infra.domain.repository
 
-import com.dmm.bootcamp.yatter2023.domain.model.Account
-import com.dmm.bootcamp.yatter2023.domain.model.Me
-import com.dmm.bootcamp.yatter2023.domain.model.Password
-import com.dmm.bootcamp.yatter2023.domain.model.Username
-import com.dmm.bootcamp.yatter2023.domain.repository.AccountRepository
+import com.dmm.bootcamp.yatter2023.di.domain.model.Account
+import com.dmm.bootcamp.yatter2023.di.domain.model.Me
+import com.dmm.bootcamp.yatter2023.di.domain.model.Password
+import com.dmm.bootcamp.yatter2023.di.domain.model.Username
+import com.dmm.bootcamp.yatter2023.di.domain.repository.AccountRepository
 import com.dmm.bootcamp.yatter2023.infra.api.YatterApi
 import com.dmm.bootcamp.yatter2023.infra.api.json.CreateAccountJson
 import com.dmm.bootcamp.yatter2023.infra.domain.converter.AccountConverter
@@ -19,8 +19,8 @@ class AccountRepositoryImpl(
   private val mePreferences: MePreferences,
 ) : AccountRepository {
   override suspend fun create(
-    username: Username,
-    password: Password
+      username: Username,
+      password: Password
   ): Me = withContext(Dispatchers.IO) {
     val accountJson = yatterApi.createNewAccount(
       CreateAccountJson(
@@ -45,11 +45,11 @@ class AccountRepositoryImpl(
   }
 
   override suspend fun update(
-    me: Me,
-    newDisplayName: String?,
-    newNote: String?,
-    newAvatar: URL?,
-    newHeader: URL?
+      me: Me,
+      newDisplayName: String?,
+      newNote: String?,
+      newAvatar: URL?,
+      newHeader: URL?
   ): Me {
     TODO("Not yet implemented")
   }

@@ -2,9 +2,9 @@ package com.dmm.bootcamp.yatter2023.ui.post
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.dmm.bootcamp.yatter2023.common.MainDispatcherRule
-import com.dmm.bootcamp.yatter2023.domain.model.AccountId
-import com.dmm.bootcamp.yatter2023.domain.model.Username
-import com.dmm.bootcamp.yatter2023.domain.service.GetMeService
+import com.dmm.bootcamp.yatter2023.di.domain.model.AccountId
+import com.dmm.bootcamp.yatter2023.di.domain.model.Username
+import com.dmm.bootcamp.yatter2023.di.domain.service.GetMeService
 import com.dmm.bootcamp.yatter2023.infra.domain.model.MeImpl
 import com.dmm.bootcamp.yatter2023.usecase.post.PostStatusUseCase
 import com.dmm.bootcamp.yatter2023.usecase.post.PostStatusUseCaseResult

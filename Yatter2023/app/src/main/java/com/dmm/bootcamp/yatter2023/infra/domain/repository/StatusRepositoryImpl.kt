@@ -1,10 +1,10 @@
 package com.dmm.bootcamp.yatter2023.infra.domain.repository
 
 import com.dmm.bootcamp.yatter2023.auth.TokenProvider
-import com.dmm.bootcamp.yatter2023.domain.model.Me
-import com.dmm.bootcamp.yatter2023.domain.model.Status
-import com.dmm.bootcamp.yatter2023.domain.model.StatusId
-import com.dmm.bootcamp.yatter2023.domain.repository.StatusRepository
+import com.dmm.bootcamp.yatter2023.di.domain.model.Me
+import com.dmm.bootcamp.yatter2023.di.domain.model.Status
+import com.dmm.bootcamp.yatter2023.di.domain.model.StatusId
+import com.dmm.bootcamp.yatter2023.di.domain.repository.StatusRepository
 import com.dmm.bootcamp.yatter2023.infra.api.YatterApi
 import com.dmm.bootcamp.yatter2023.infra.api.json.PostStatusJson
 import com.dmm.bootcamp.yatter2023.infra.domain.converter.StatusConverter

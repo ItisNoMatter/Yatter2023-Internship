@@ -1,8 +1,8 @@
 package com.dmm.bootcamp.yatter2023.infra.domain.service
 
-import com.dmm.bootcamp.yatter2023.domain.model.AccountId
-import com.dmm.bootcamp.yatter2023.domain.model.Username
-import com.dmm.bootcamp.yatter2023.domain.repository.AccountRepository
+import com.dmm.bootcamp.yatter2023.di.domain.model.AccountId
+import com.dmm.bootcamp.yatter2023.di.domain.model.Username
+import com.dmm.bootcamp.yatter2023.di.domain.repository.AccountRepository
 import com.dmm.bootcamp.yatter2023.infra.domain.converter.MeConverter
 import com.dmm.bootcamp.yatter2023.infra.domain.model.AccountImpl
 import com.google.common.truth.Truth.assertThat

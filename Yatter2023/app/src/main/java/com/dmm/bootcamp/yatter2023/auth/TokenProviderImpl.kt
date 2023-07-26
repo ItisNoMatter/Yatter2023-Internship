@@ -1,7 +1,7 @@
 package com.dmm.bootcamp.yatter2023.auth
 
 import android.accounts.AuthenticatorException
-import com.dmm.bootcamp.yatter2023.domain.service.GetMeService
+import com.dmm.bootcamp.yatter2023.di.domain.service.GetMeService
 
 class TokenProviderImpl(private val getMeService: GetMeService) : TokenProvider {
   override suspend fun provide(): String {

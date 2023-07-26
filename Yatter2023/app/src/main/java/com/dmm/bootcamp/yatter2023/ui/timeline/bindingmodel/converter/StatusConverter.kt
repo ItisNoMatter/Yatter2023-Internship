@@ -1,6 +1,6 @@
 package com.dmm.bootcamp.yatter2023.ui.timeline.bindingmodel.converter
 
-import com.dmm.bootcamp.yatter2023.domain.model.Status
+import com.dmm.bootcamp.yatter2023.di.domain.model.Status
 import com.dmm.bootcamp.yatter2023.ui.timeline.bindingmodel.StatusBindingModel
 
 

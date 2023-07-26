@@ -1,7 +1,7 @@
 package com.dmm.bootcamp.yatter2023.infra.domain.converter
 
-import com.dmm.bootcamp.yatter2023.domain.model.Account
-import com.dmm.bootcamp.yatter2023.domain.model.Me
+import com.dmm.bootcamp.yatter2023.di.domain.model.Account
+import com.dmm.bootcamp.yatter2023.di.domain.model.Me
 import com.dmm.bootcamp.yatter2023.infra.domain.model.MeImpl
 
 object MeConverter {

@@ -1,21 +1,21 @@
 package com.dmm.bootcamp.yatter2023.infra.domain.model
 
-import com.dmm.bootcamp.yatter2023.domain.model.Account
-import com.dmm.bootcamp.yatter2023.domain.model.AccountId
-import com.dmm.bootcamp.yatter2023.domain.model.Username
+import com.dmm.bootcamp.yatter2023.di.domain.model.Account
+import com.dmm.bootcamp.yatter2023.di.domain.model.AccountId
+import com.dmm.bootcamp.yatter2023.di.domain.model.Username
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.net.URL
 
 class AccountImpl(
-  id: AccountId,
-  username: Username,
-  displayName: String?,
-  note: String?,
-  avatar: URL?,
-  header: URL?,
-  followingCount: Int,
-  followerCount: Int,
+    id: AccountId,
+    username: Username,
+    displayName: String?,
+    note: String?,
+    avatar: URL?,
+    header: URL?,
+    followingCount: Int,
+    followerCount: Int,
 ) : Account(
   id,
   username,

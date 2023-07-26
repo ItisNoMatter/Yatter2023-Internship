@@ -1,11 +1,11 @@
 package com.dmm.bootcamp.yatter2023.ui.timeline
 
 import com.dmm.bootcamp.yatter2023.common.MainDispatcherRule
-import com.dmm.bootcamp.yatter2023.domain.model.AccountId
-import com.dmm.bootcamp.yatter2023.domain.model.Status
-import com.dmm.bootcamp.yatter2023.domain.model.StatusId
-import com.dmm.bootcamp.yatter2023.domain.model.Username
-import com.dmm.bootcamp.yatter2023.domain.repository.StatusRepository
+import com.dmm.bootcamp.yatter2023.di.domain.model.AccountId
+import com.dmm.bootcamp.yatter2023.di.domain.model.Status
+import com.dmm.bootcamp.yatter2023.di.domain.model.StatusId
+import com.dmm.bootcamp.yatter2023.di.domain.model.Username
+import com.dmm.bootcamp.yatter2023.di.domain.repository.StatusRepository
 import com.dmm.bootcamp.yatter2023.infra.domain.model.AccountImpl
 import com.google.common.truth.Truth.assertThat
 import io.mockk.coEvery

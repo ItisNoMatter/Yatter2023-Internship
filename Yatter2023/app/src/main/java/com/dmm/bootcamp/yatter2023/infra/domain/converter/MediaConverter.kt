@@ -1,7 +1,7 @@
 package com.dmm.bootcamp.yatter2023.infra.domain.converter
 
-import com.dmm.bootcamp.yatter2023.domain.model.Media
-import com.dmm.bootcamp.yatter2023.domain.model.MediaId
+import com.dmm.bootcamp.yatter2023.di.domain.model.Media
+import com.dmm.bootcamp.yatter2023.di.domain.model.MediaId
 import com.dmm.bootcamp.yatter2023.infra.api.json.MediaJson
 
 object MediaConverter {

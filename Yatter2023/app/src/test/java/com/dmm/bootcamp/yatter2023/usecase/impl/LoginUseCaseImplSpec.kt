@@ -1,8 +1,8 @@
 package com.dmm.bootcamp.yatter2023.usecase.impl
 
-import com.dmm.bootcamp.yatter2023.domain.model.Password
-import com.dmm.bootcamp.yatter2023.domain.model.Username
-import com.dmm.bootcamp.yatter2023.domain.service.LoginService
+import com.dmm.bootcamp.yatter2023.di.domain.model.Password
+import com.dmm.bootcamp.yatter2023.di.domain.model.Username
+import com.dmm.bootcamp.yatter2023.di.domain.service.LoginService
 import com.dmm.bootcamp.yatter2023.usecase.impl.login.LoginUseCaseImpl
 import com.dmm.bootcamp.yatter2023.usecase.login.LoginUseCaseResult
 import com.google.common.truth.Truth.assertThat
