@@ -5,9 +5,12 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.dmm.bootcamp.yatter2023.di.domain.service.CheckLoginService
 import com.dmm.bootcamp.yatter2023.util.SingleLiveEvent
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class MainViewModel(
+@HiltViewModel
+class MainViewModel @Inject constructor(
   private val checkLoginService: CheckLoginService,
 ) : ViewModel(){
   private val _navigateToLogin: SingleLiveEvent<Unit> = SingleLiveEvent()
@@ -15,8 +18,11 @@ class MainViewModel(
 
   private val _navigateToPublicTimeline: SingleLiveEvent<Unit> = SingleLiveEvent()
   val navigateToPublicTimeline: LiveData<Unit> = _navigateToPublicTimeline
-
+  init{
+    println("viewModel created!!")
+  }
   fun onCreate(){
+    println("onCreate called!")
     viewModelScope.launch {
       if (checkLoginService.execute()) {
         _navigateToPublicTimeline.value = Unit
