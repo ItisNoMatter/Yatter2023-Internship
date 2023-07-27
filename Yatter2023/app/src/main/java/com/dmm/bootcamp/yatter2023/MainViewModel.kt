@@ -11,24 +11,21 @@ import javax.inject.Inject
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
-  private val checkLoginService: CheckLoginService,
-) : ViewModel(){
-  private val _navigateToLogin: SingleLiveEvent<Unit> = SingleLiveEvent()
-  val navigateToLogin: LiveData<Unit> = _navigateToLogin
+    private val checkLoginService: CheckLoginService,
+) : ViewModel() {
+    private val _navigateToLogin: SingleLiveEvent<Unit> = SingleLiveEvent()
+    val navigateToLogin: LiveData<Unit> = _navigateToLogin
 
-  private val _navigateToPublicTimeline: SingleLiveEvent<Unit> = SingleLiveEvent()
-  val navigateToPublicTimeline: LiveData<Unit> = _navigateToPublicTimeline
-  init{
-    println("viewModel created!!")
-  }
-  fun onCreate(){
-    println("onCreate called!")
-    viewModelScope.launch {
-      if (checkLoginService.execute()) {
-        _navigateToPublicTimeline.value = Unit
-      } else {
-        _navigateToLogin.value = Unit
-      }
+    private val _navigateToPublicTimeline: SingleLiveEvent<Unit> = SingleLiveEvent()
+    val navigateToPublicTimeline: LiveData<Unit> = _navigateToPublicTimeline
+    fun onCreate() {
+
+        viewModelScope.launch {
+            if (checkLoginService.execute()) {
+                _navigateToPublicTimeline.value = Unit
+            } else {
+                _navigateToLogin.value = Unit
+            }
+        }
     }
-  }
 }

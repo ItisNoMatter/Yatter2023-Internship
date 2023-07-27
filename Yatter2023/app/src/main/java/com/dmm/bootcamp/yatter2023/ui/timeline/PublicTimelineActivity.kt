@@ -18,6 +18,7 @@ class PublicTimelineActivity : AppCompatActivity() {
             PublicTimelineActivity::class.java,
         )
     }
+
     private val viewModel: PublicTimelineViewModel by viewModel()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

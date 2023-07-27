@@ -8,19 +8,15 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.ui.Modifier
-import androidx.lifecycle.ViewModelProvider
 import com.dmm.bootcamp.yatter2023.ui.login.LoginActivity
 import com.dmm.bootcamp.yatter2023.ui.theme.Yatter2023Theme
 import com.dmm.bootcamp.yatter2023.ui.timeline.PublicTimelineActivity
 import dagger.hilt.android.AndroidEntryPoint
-import org.koin.androidx.viewmodel.ext.android.viewModel
-import javax.inject.Inject
 
 @AndroidEntryPoint
-class MainActivity : AppCompatActivity (){
+class MainActivity : AppCompatActivity() {
     val viewModel: MainViewModel by viewModels()
 
-    private val  viewModel_koin: MainViewModel by viewModel()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -35,7 +31,7 @@ class MainActivity : AppCompatActivity (){
         }
         viewModel.onCreate()
 
-        viewModel.navigateToPublicTimeline.observe(this){
+        viewModel.navigateToPublicTimeline.observe(this) {
             startActivity(PublicTimelineActivity.newIntent(this))
         }
 
