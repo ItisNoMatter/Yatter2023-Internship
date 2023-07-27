@@ -9,7 +9,8 @@ import com.dmm.bootcamp.yatter2023.usecase.register.RegisterAccountUseCase
 import org.koin.dsl.module
 
 internal val useCaseModule = module {
-  factory<PostStatusUseCase> { PostStatusUseCaseImpl(get()) }
-  factory<RegisterAccountUseCase> { RegisterAccountUseCaseImpl(get(), get()) }
-  factory<LoginUseCase> { LoginUseCaseImpl(get()) }
+    factory<PostStatusUseCase> { PostStatusUseCaseImpl(get()) }
+    factory<RegisterAccountUseCase> { RegisterAccountUseCaseImpl(get(), get()) }
+    factory<LoginUseCase> { LoginUseCaseImpl(get()) }
 }
+
