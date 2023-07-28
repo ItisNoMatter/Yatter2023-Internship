@@ -5,29 +5,30 @@ import com.dmm.bootcamp.yatter2023.di.domain.repository.StatusRepository
 import com.dmm.bootcamp.yatter2023.usecase.post.PostStatusUseCase
 import com.dmm.bootcamp.yatter2023.usecase.post.PostStatusUseCaseResult
 import java.io.File
+import javax.inject.Inject
 
-class PostStatusUseCaseImpl(
-  private val statusRepository: StatusRepository
+class PostStatusUseCaseImpl @Inject constructor(
+    private val statusRepository: StatusRepository
 ) : PostStatusUseCase {
-  override suspend fun execute(
-    content: String,
-    attachmentList: List<File>
-  ): PostStatusUseCaseResult {
-    if (content == "" && attachmentList.isEmpty()) {
-      return PostStatusUseCaseResult.Failure.EmptyContent
-    }
+    override suspend fun execute(
+        content: String,
+        attachmentList: List<File>
+    ): PostStatusUseCaseResult {
+        if (content == "" && attachmentList.isEmpty()) {
+            return PostStatusUseCaseResult.Failure.EmptyContent
+        }
 
-    return try {
-      statusRepository.create(
-        content = content,
-        attachmentList = emptyList()
-      )
+        return try {
+            statusRepository.create(
+                content = content,
+                attachmentList = emptyList()
+            )
 
-      PostStatusUseCaseResult.Success
-    } catch (e: AuthenticatorException) {
-      PostStatusUseCaseResult.Failure.NotLoggedIn
-    } catch (e: Exception) {
-      PostStatusUseCaseResult.Failure.OtherError(e)
+            PostStatusUseCaseResult.Success
+        } catch (e: AuthenticatorException) {
+            PostStatusUseCaseResult.Failure.NotLoggedIn
+        } catch (e: Exception) {
+            PostStatusUseCaseResult.Failure.OtherError(e)
+        }
     }
-  }
 }

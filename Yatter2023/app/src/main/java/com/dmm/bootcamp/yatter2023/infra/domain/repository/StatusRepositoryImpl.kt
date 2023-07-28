@@ -11,45 +11,46 @@ import com.dmm.bootcamp.yatter2023.infra.domain.converter.StatusConverter
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.withContext
 import java.io.File
+import javax.inject.Inject
 
-class StatusRepositoryImpl(
-  private val yatterApi: YatterApi,
-  private val tokenProvider: TokenProvider,
+class StatusRepositoryImpl @Inject constructor(
+    private val yatterApi: YatterApi,
+    private val tokenProvider: TokenProvider,
 ) : StatusRepository {
-  override suspend fun findById(id: StatusId): Status? = withContext(IO) {
-    val statusList = yatterApi.getPublicTimeline()
-    StatusConverter.convertToDomainModel(statusList).firstOrNull { it.id == id }
-  }
+    override suspend fun findById(id: StatusId): Status? = withContext(IO) {
+        val statusList = yatterApi.getPublicTimeline()
+        StatusConverter.convertToDomainModel(statusList).firstOrNull { it.id == id }
+    }
 
-  override suspend fun findAllPublic(): List<Status> = withContext(IO) {
-    val statusList = yatterApi.getPublicTimeline()
-    StatusConverter.convertToDomainModel(statusList)
-  }
+    override suspend fun findAllPublic(): List<Status> = withContext(IO) {
+        val statusList = yatterApi.getPublicTimeline()
+        StatusConverter.convertToDomainModel(statusList)
+    }
 
-  override suspend fun findAllHome(): List<Status> = withContext(IO) {
-    val statusList = yatterApi.getHomeTimeline(tokenProvider.provide())
-    StatusConverter.convertToDomainModel(statusList)
-  }
+    override suspend fun findAllHome(): List<Status> = withContext(IO) {
+        val statusList = yatterApi.getHomeTimeline(tokenProvider.provide())
+        StatusConverter.convertToDomainModel(statusList)
+    }
 
-  override suspend fun findAllFollowings(me: Me): List<Status> {
-    TODO("Not yet implemented")
-  }
+    override suspend fun findAllFollowings(me: Me): List<Status> {
+        TODO("Not yet implemented")
+    }
 
-  override suspend fun create(
-    content: String,
-    attachmentList: List<File>
-  ): Status = withContext(IO) {
-    val statusJson = yatterApi.postStatus(
-      tokenProvider.provide(),
-      PostStatusJson(
-        content,
-        listOf()
-      )
-    )
-    StatusConverter.convertToDomainModel(statusJson)
-  }
+    override suspend fun create(
+        content: String,
+        attachmentList: List<File>
+    ): Status = withContext(IO) {
+        val statusJson = yatterApi.postStatus(
+            tokenProvider.provide(),
+            PostStatusJson(
+                content,
+                listOf()
+            )
+        )
+        StatusConverter.convertToDomainModel(statusJson)
+    }
 
-  override suspend fun delete(status: Status) {
-    TODO("Not yet implemented")
-  }
+    override suspend fun delete(status: Status) {
+        TODO("Not yet implemented")
+    }
 }

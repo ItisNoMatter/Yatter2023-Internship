@@ -5,10 +5,12 @@ import com.dmm.bootcamp.yatter2023.di.domainImplModule
 import com.dmm.bootcamp.yatter2023.di.infraModule
 import com.dmm.bootcamp.yatter2023.di.useCaseModule
 import com.dmm.bootcamp.yatter2023.di.viewModelModule
+import dagger.hilt.android.HiltAndroidApp
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
 
+@HiltAndroidApp
 class YatterApplication : Application() {
   override fun onCreate() {
     super.onCreate()

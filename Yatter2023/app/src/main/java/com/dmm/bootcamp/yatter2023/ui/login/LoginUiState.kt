@@ -5,8 +5,9 @@ data class LoginUiState(
     val isLoading: Boolean,
     val validUsername: Boolean,
     val validPassword: Boolean,
-){
+) {
     val isEnableLogin: Boolean = validUsername && validPassword
+
     companion object {
         fun empty(): LoginUiState = LoginUiState(
             loginBindingModel = LoginBindingModel(

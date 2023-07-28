@@ -9,14 +9,17 @@ import com.dmm.bootcamp.yatter2023.di.domain.model.Username
 import com.dmm.bootcamp.yatter2023.usecase.login.LoginUseCase
 import com.dmm.bootcamp.yatter2023.usecase.login.LoginUseCaseResult
 import com.dmm.bootcamp.yatter2023.util.SingleLiveEvent
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class LoginViewModel(
+@HiltViewModel
+class LoginViewModel @Inject constructor(
     private val loginUseCase: LoginUseCase,
-) : ViewModel(){
+) : ViewModel() {
     private val _uiState: MutableStateFlow<LoginUiState> = MutableStateFlow(LoginUiState.empty())
     val uiState: StateFlow<LoginUiState> = _uiState
 
@@ -69,7 +72,7 @@ class LoginViewModel(
 
                 is LoginUseCaseResult.Failure -> {
                     val tag = this::class.java.name
-                    Log.d(tag,"login failed")
+                    Log.d(tag, "login failed")
 
                     // ログイン処理失敗したらエラー表示
                 }
@@ -78,6 +81,7 @@ class LoginViewModel(
             _uiState.update { it.copy(isLoading = true) } // ローディング状態を解除する
         }
     }
+
     fun onClickRegister() {
         _navigateToRegister.value = Unit
     }

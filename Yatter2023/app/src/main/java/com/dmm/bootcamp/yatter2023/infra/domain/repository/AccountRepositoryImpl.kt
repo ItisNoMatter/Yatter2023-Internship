@@ -13,44 +13,45 @@ import com.dmm.bootcamp.yatter2023.infra.pref.MePreferences
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.net.URL
+import javax.inject.Inject
 
-class AccountRepositoryImpl(
-  private val yatterApi: YatterApi,
-  private val mePreferences: MePreferences,
+class AccountRepositoryImpl @Inject constructor(
+    private val yatterApi: YatterApi,
+    private val mePreferences: MePreferences,
 ) : AccountRepository {
-  override suspend fun create(
-      username: Username,
-      password: Password
-  ): Me = withContext(Dispatchers.IO) {
-    val accountJson = yatterApi.createNewAccount(
-      CreateAccountJson(
-        username = username.value,
-        password = password.value
-      )
-    )
+    override suspend fun create(
+        username: Username,
+        password: Password
+    ): Me = withContext(Dispatchers.IO) {
+        val accountJson = yatterApi.createNewAccount(
+            CreateAccountJson(
+                username = username.value,
+                password = password.value
+            )
+        )
 
-    MeConverter.convertToMe(AccountConverter.convertToDomainModel(accountJson))
-  }
+        MeConverter.convertToMe(AccountConverter.convertToDomainModel(accountJson))
+    }
 
-  override suspend fun findMe(): Me? = withContext(Dispatchers.IO) {
-    val username = mePreferences.getUsername() ?: return@withContext null
-    if (username.isEmpty()) return@withContext null
-    val account = findByUsername(username = Username(username))
-    MeConverter.convertToMe(account)
-  }
+    override suspend fun findMe(): Me? = withContext(Dispatchers.IO) {
+        val username = mePreferences.getUsername() ?: return@withContext null
+        if (username.isEmpty()) return@withContext null
+        val account = findByUsername(username = Username(username))
+        MeConverter.convertToMe(account)
+    }
 
-  override suspend fun findByUsername(username: Username): Account = withContext(Dispatchers.IO) {
-    val accountJson = yatterApi.getAccountByUsername(username = username.value)
-    AccountConverter.convertToDomainModel(accountJson)
-  }
+    override suspend fun findByUsername(username: Username): Account = withContext(Dispatchers.IO) {
+        val accountJson = yatterApi.getAccountByUsername(username = username.value)
+        AccountConverter.convertToDomainModel(accountJson)
+    }
 
-  override suspend fun update(
-      me: Me,
-      newDisplayName: String?,
-      newNote: String?,
-      newAvatar: URL?,
-      newHeader: URL?
-  ): Me {
-    TODO("Not yet implemented")
-  }
+    override suspend fun update(
+        me: Me,
+        newDisplayName: String?,
+        newNote: String?,
+        newAvatar: URL?,
+        newHeader: URL?
+    ): Me {
+        TODO("Not yet implemented")
+    }
 }

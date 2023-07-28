@@ -6,12 +6,15 @@ import androidx.lifecycle.viewModelScope
 import com.dmm.bootcamp.yatter2023.di.domain.repository.StatusRepository
 import com.dmm.bootcamp.yatter2023.ui.timeline.bindingmodel.converter.StatusConverter
 import com.dmm.bootcamp.yatter2023.util.SingleLiveEvent
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class PublicTimelineViewModel(
+@HiltViewModel
+class PublicTimelineViewModel @Inject constructor(
     private val statusRepository: StatusRepository,
 ) : ViewModel() {
     private val _uiState: MutableStateFlow<PublicTimelineUiState> =
@@ -28,6 +31,7 @@ class PublicTimelineViewModel(
             )
         }
     }
+
     fun onResume() {
         viewModelScope.launch { // 1
             _uiState.update { it.copy(isLoading = true) } // 2
@@ -35,6 +39,7 @@ class PublicTimelineViewModel(
             _uiState.update { it.copy(isLoading = false) } // 4
         }
     }
+
     fun onRefresh() {
         viewModelScope.launch { // 1
             _uiState.update { it.copy(isRefreshing = true) } // 2
@@ -42,6 +47,7 @@ class PublicTimelineViewModel(
             _uiState.update { it.copy(isRefreshing = false) } // 4
         }
     }
+
     fun onClickPost() {
         _navigateToPost.value = Unit
     }

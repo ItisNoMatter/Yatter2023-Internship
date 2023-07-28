@@ -7,13 +7,15 @@ import com.dmm.bootcamp.yatter2023.di.domain.service.GetMeService
 import com.dmm.bootcamp.yatter2023.usecase.post.PostStatusUseCase
 import com.dmm.bootcamp.yatter2023.usecase.post.PostStatusUseCaseResult
 import com.dmm.bootcamp.yatter2023.util.SingleLiveEvent
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-
-class PostViewModel(
+@HiltViewModel
+class PostViewModel @Inject constructor(
     private val postStatusUseCase: PostStatusUseCase,
     private val getMeService: GetMeService,
 ) : ViewModel() {

@@ -2,6 +2,7 @@ package com.dmm.bootcamp.yatter2023
 
 import android.os.Bundle
 import androidx.activity.compose.setContent
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
@@ -10,10 +11,12 @@ import androidx.compose.ui.Modifier
 import com.dmm.bootcamp.yatter2023.ui.login.LoginActivity
 import com.dmm.bootcamp.yatter2023.ui.theme.Yatter2023Theme
 import com.dmm.bootcamp.yatter2023.ui.timeline.PublicTimelineActivity
-import org.koin.androidx.viewmodel.ext.android.viewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
-    private val  viewModel: MainViewModel by viewModel()
+    val viewModel: MainViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -28,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         }
         viewModel.onCreate()
 
-        viewModel.navigateToPublicTimeline.observe(this){
+        viewModel.navigateToPublicTimeline.observe(this) {
             startActivity(PublicTimelineActivity.newIntent(this))
         }
 
