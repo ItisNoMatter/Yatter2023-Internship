@@ -1,6 +1,5 @@
 package com.dmm.bootcamp.yatter2023.ui.login
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -71,9 +70,7 @@ class LoginViewModel @Inject constructor(
                 }
 
                 is LoginUseCaseResult.Failure -> {
-                    val tag = this::class.java.name
-                    Log.d(tag, "login failed")
-
+                    println("login_failed")
                     // ログイン処理失敗したらエラー表示
                 }
             }

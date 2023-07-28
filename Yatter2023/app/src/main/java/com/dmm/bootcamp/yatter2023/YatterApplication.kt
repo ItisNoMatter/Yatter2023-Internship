@@ -12,21 +12,21 @@ import org.koin.core.context.startKoin
 
 @HiltAndroidApp
 class YatterApplication : Application() {
-  override fun onCreate() {
-    super.onCreate()
+    override fun onCreate() {
+        super.onCreate()
 
-    startKoin {
-      androidLogger()
-      // Reference Android context
-      androidContext(this@YatterApplication)
-      modules(
-        modules = listOf(
-          domainImplModule,
-          infraModule,
-          useCaseModule,
-          viewModelModule,
-        )
-      )
+        startKoin {
+            androidLogger()
+            // Reference Android context
+            androidContext(this@YatterApplication)
+            modules(
+                modules = listOf(
+                    domainImplModule,
+                    infraModule,
+                    useCaseModule,
+                    viewModelModule,
+                )
+            )
+        }
     }
-  }
 }
